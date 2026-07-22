@@ -17,7 +17,18 @@
 		27F80773300E8BE1001BE78A /* CustomOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F80772300E8BE1001BE78A /* CustomOrderView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		273E07303010CBFD00FB5B82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27F8074E300E8AC6001BE78A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27F80755300E8AC6001BE78A;
+			remoteInfo = 2Sick;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		273E072C3010CBFD00FB5B82 /* 2SickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 2SickTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F80756300E8AC7001BE78A /* 2Sick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2Sick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F80764300E8B6A001BE78A /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		27F80766300E8B8E001BE78A /* ShopStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopStore.swift; sourceTree = "<group>"; };
@@ -30,6 +41,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		273E072D3010CBFD00FB5B82 /* 2SickTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = 2SickTests;
+			sourceTree = "<group>";
+		};
 		27F80758300E8AC7001BE78A /* 2Sick */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = 2Sick;
@@ -38,6 +54,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		273E07293010CBFD00FB5B82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27F80753300E8AC6001BE78A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -52,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				27F80758300E8AC7001BE78A /* 2Sick */,
+				273E072D3010CBFD00FB5B82 /* 2SickTests */,
 				27F80757300E8AC7001BE78A /* Products */,
 				27F80764300E8B6A001BE78A /* Models.swift */,
 				27F80766300E8B8E001BE78A /* ShopStore.swift */,
@@ -68,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				27F80756300E8AC7001BE78A /* 2Sick.app */,
+				273E072C3010CBFD00FB5B82 /* 2SickTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,6 +100,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		273E072B3010CBFD00FB5B82 /* 2SickTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 273E07343010CBFD00FB5B82 /* Build configuration list for PBXNativeTarget "2SickTests" */;
+			buildPhases = (
+				273E07283010CBFD00FB5B82 /* Sources */,
+				273E07293010CBFD00FB5B82 /* Frameworks */,
+				273E072A3010CBFD00FB5B82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				273E07313010CBFD00FB5B82 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				273E072D3010CBFD00FB5B82 /* 2SickTests */,
+			);
+			name = 2SickTests;
+			packageProductDependencies = (
+			);
+			productName = 2SickTests;
+			productReference = 273E072C3010CBFD00FB5B82 /* 2SickTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		27F80755300E8AC6001BE78A /* 2Sick */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27F80761300E8AC8001BE78A /* Build configuration list for PBXNativeTarget "2Sick" */;
@@ -107,6 +155,10 @@
 				LastSwiftUpdateCheck = 2660;
 				LastUpgradeCheck = 2660;
 				TargetAttributes = {
+					273E072B3010CBFD00FB5B82 = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = 27F80755300E8AC6001BE78A;
+					};
 					27F80755300E8AC6001BE78A = {
 						CreatedOnToolsVersion = 26.6;
 					};
@@ -127,11 +179,19 @@
 			projectRoot = "";
 			targets = (
 				27F80755300E8AC6001BE78A /* 2Sick */,
+				273E072B3010CBFD00FB5B82 /* 2SickTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		273E072A3010CBFD00FB5B82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27F80754300E8AC6001BE78A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -142,6 +202,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		273E07283010CBFD00FB5B82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27F80752300E8AC6001BE78A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -159,7 +226,57 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		273E07313010CBFD00FB5B82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27F80755300E8AC6001BE78A /* 2Sick */;
+			targetProxy = 273E07303010CBFD00FB5B82 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		273E07323010CBFD00FB5B82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3253F3AX7M;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.hashier.-SickTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/2Sick.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/2Sick";
+			};
+			name = Debug;
+		};
+		273E07333010CBFD00FB5B82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3253F3AX7M;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.hashier.-SickTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/2Sick.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/2Sick";
+			};
+			name = Release;
+		};
 		27F8075F300E8AC8001BE78A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -296,6 +413,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,6 +446,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -348,6 +467,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		273E07343010CBFD00FB5B82 /* Build configuration list for PBXNativeTarget "2SickTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				273E07323010CBFD00FB5B82 /* Debug */,
+				273E07333010CBFD00FB5B82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		27F80751300E8AC6001BE78A /* Build configuration list for PBXProject "2Sick" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
