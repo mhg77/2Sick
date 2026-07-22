@@ -8,17 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(ShopStore.self) private var store
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            Tab("Каталог", systemImage: "sparkles") {
+                CatalogView()
+            }
+            Tab("Избранное", systemImage: "heart.fill") {
+                FavoritesView()
+            }
+            Tab("Кастом", systemImage: "paintbrush.pointed.fill") {
+                CustomOrderView()
+            }
+            Tab("Корзина", systemImage: "bag.fill") {
+                CartView()
+            }
+            .badge(store.cartCount)
         }
-        .padding()
+        .tint(Brand.pink)
     }
 }
 
 #Preview {
     ContentView()
+        .environment(ShopStore())
+        .preferredColorScheme(.dark)
 }
