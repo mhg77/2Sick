@@ -81,6 +81,7 @@ struct ContentView: View {
             .listStyle(.sidebar)
             .scrollContentBackground(.hidden)
             .background(Brand.background)
+            .navigationSplitViewColumnWidth(min: 180, ideal: 200, max: 220)
         } detail: {
             detailView(for: sidebarTab ?? .catalog)
         }
