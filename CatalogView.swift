@@ -29,6 +29,7 @@ struct CatalogView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
+                    logoBanner
                     collectionPicker
                         .sensoryFeedback(.selection, trigger: selectedCollection)
                     categoryChips
@@ -51,12 +52,21 @@ struct CatalogView: View {
                 .padding(.horizontal)
             }
             .background(Brand.background)
-            .navigationTitle("SICK²")
+            .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: Product.self) { product in
                 ProductDetailView(product: product)
             }
             .searchable(text: $searchText, prompt: "Поиск украшений")
         }
+    }
+
+    private var logoBanner: some View {
+        Image("AppLogo")
+            .resizable()
+            .scaledToFill()
+            .frame(maxWidth: .infinity, minHeight: 100, maxHeight: 100)
+            .clipped()
+            .clipShape(RoundedRectangle(cornerRadius: 16))
     }
 
     private var collectionPicker: some View {
