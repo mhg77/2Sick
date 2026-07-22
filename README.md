@@ -27,6 +27,7 @@
 | SwiftUI | Декларативный UI |
 | `@Observable` | SwiftUI-native state без Combine |
 | `NavigationSplitView` | Адаптивная навигация для iPad |
+| `sensoryFeedback` | Хаптика на iPhone и iPad |
 
 ## Тесты
 
