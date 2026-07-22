@@ -58,6 +58,7 @@ struct CartView: View {
             }
             .background(Brand.background)
             .navigationTitle("Корзина")
+            .sensoryFeedback(.success, trigger: showOrderPlaced) { _, new in new }
             .alert("Заказ оформлен!", isPresented: $showOrderPlaced) {
                 Button("Ок") {}
             } message: {
@@ -70,6 +71,7 @@ struct CartView: View {
 private struct CartRow: View {
     @Environment(ShopStore.self) private var store
     let item: CartItem
+    @State private var quantityFeedback = 0
 
     var body: some View {
         HStack(spacing: 12) {
@@ -86,6 +88,7 @@ private struct CartRow: View {
             HStack(spacing: 10) {
                 Button {
                     store.setQuantity(item.quantity - 1, for: item.product)
+                    quantityFeedback += 1
                 } label: {
                     Image(systemName: "minus.circle.fill")
                 }
@@ -94,12 +97,14 @@ private struct CartRow: View {
                     .monospacedDigit()
                 Button {
                     store.setQuantity(item.quantity + 1, for: item.product)
+                    quantityFeedback += 1
                 } label: {
                     Image(systemName: "plus.circle.fill")
                 }
             }
             .buttonStyle(.plain)
             .foregroundStyle(Brand.pink)
+            .sensoryFeedback(.impact(weight: .light), trigger: quantityFeedback)
         }
     }
 }

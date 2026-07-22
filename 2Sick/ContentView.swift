@@ -64,6 +64,7 @@ struct ContentView: View {
                 .badge(store.cartCount)
         }
         .tint(Brand.pink)
+        .sensoryFeedback(.selection, trigger: selectedTab)
     }
 
     // MARK: - iPad
@@ -96,6 +97,7 @@ struct ContentView: View {
             detailView(for: sidebarTab ?? .catalog)
         }
         .tint(Brand.pink)
+        .sensoryFeedback(.selection, trigger: sidebarTab)
     }
 
     @ViewBuilder

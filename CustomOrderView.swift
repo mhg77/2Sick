@@ -63,6 +63,7 @@ struct CustomOrderView: View {
             .scrollContentBackground(.hidden)
             .background(Brand.background)
             .navigationTitle("Кастом")
+            .sensoryFeedback(.success, trigger: showSent) { _, new in new }
             .alert("Заявка отправлена!", isPresented: $showSent) {
                 Button("Ок") {}
             } message: {

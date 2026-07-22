@@ -31,6 +31,8 @@ struct ProductDetailView: View {
         }
         .background(Brand.background)
         .navigationBarTitleDisplayMode(.inline)
+        .sensoryFeedback(.impact(weight: .medium), trigger: addedToCart) { _, new in new }
+        .sensoryFeedback(.selection, trigger: store.isFavorite(product))
     }
 
     private var infoColumn: some View {

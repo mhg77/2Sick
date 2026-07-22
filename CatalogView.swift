@@ -30,6 +30,7 @@ struct CatalogView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
                     collectionPicker
+                        .sensoryFeedback(.selection, trigger: selectedCollection)
                     categoryChips
                     LazyVGrid(columns: columns, spacing: 12) {
                         ForEach(filteredProducts) { product in
@@ -108,6 +109,7 @@ struct ProductCard: View {
                     }
                     .padding(6)
                 }
+                .sensoryFeedback(.selection, trigger: store.isFavorite(product))
             Text(product.name)
                 .font(.subheadline.weight(.medium))
                 .foregroundStyle(.white)
