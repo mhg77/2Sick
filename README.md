@@ -28,6 +28,20 @@
 | `@Observable` | SwiftUI-native state без Combine |
 | `NavigationSplitView` | Адаптивная навигация для iPad |
 
+## Тесты
+
+20 юнит-тестов на Swift Testing (`2SickTests`), покрывающих бизнес-логику:
+
+| Группа | Что проверяется |
+|---|---|
+| Каталог | Не пустой, все цены > 0, форматирование ₽ |
+| Корзина — добавление | Счётчик, уникальность позиций, идентичность товара |
+| Корзина — удаление | `remove`, `setQuantity(0)`, отрицательное количество |
+| Корзина — суммы | Итог, `CartItem.total`, пустая сумма = 0 |
+| Избранное | Toggle add/remove, список, независимость от корзины |
+
+Запуск: **⌘U** в Xcode или `xcodebuild test -scheme 2Sick`.
+
 ## Структура проекта
 
 ```
@@ -35,6 +49,8 @@
 ├── 2Sick/
 │   ├── _SickApp.swift         — точка входа (@main)
 │   └── ContentView.swift      — корневой экран (TabView / NavigationSplitView)
+├── 2SickTests/
+│   └── ShopStoreTests.swift   — юнит-тесты (Swift Testing, 20 тестов)
 ├── Models.swift               — модели данных (Product, CartItem, Enums)
 ├── ShopStore.swift            — хранилище состояния (@Observable)
 ├── Theme.swift                — цвета бренда и ProductImageTile
@@ -49,7 +65,7 @@
 
 1. Открыть `2Sick.xcodeproj` в Xcode 16+
 2. Выбрать симулятор или устройство с iOS 17+
-3. Запустить (⌘R)
+3. Запустить (⌘R), тесты — ⌘U
 
 ## Автор
 
