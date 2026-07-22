@@ -23,7 +23,7 @@ struct CatalogView: View {
         }
     }
 
-    private let columns = [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)]
+    private let columns = [GridItem(.adaptive(minimum: 160, maximum: 220), spacing: 12)]
 
     var body: some View {
         NavigationStack {
