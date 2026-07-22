@@ -73,8 +73,8 @@ struct ContentView: View {
             List(selection: $sidebarTab) {
                 ForEach(AppTab.allCases) { tab in
                     Label(tab.title, systemImage: tab.icon)
-                        .tag(tab as AppTab?)
                         .badge(tab == .cart ? store.cartCount : 0)
+                        .tag(tab as AppTab?)
                 }
             }
             .navigationTitle("SICK²")
