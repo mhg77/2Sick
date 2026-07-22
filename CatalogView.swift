@@ -32,6 +32,7 @@ struct CatalogView: View {
                     collectionPicker
                         .sensoryFeedback(.selection, trigger: selectedCollection)
                     categoryChips
+                        .sensoryFeedback(.selection, trigger: selectedCategory)
                     LazyVGrid(columns: columns, spacing: 12) {
                         ForEach(filteredProducts) { product in
                             NavigationLink(value: product) {
