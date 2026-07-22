@@ -70,11 +70,21 @@ struct ContentView: View {
 
     private var iPadLayout: some View {
         NavigationSplitView {
-            List(selection: $sidebarTab) {
+            List {
                 ForEach(AppTab.allCases) { tab in
-                    Label(tab.title, systemImage: tab.icon)
-                        .badge(tab == .cart ? store.cartCount : 0)
-                        .tag(tab as AppTab?)
+                    Button {
+                        sidebarTab = tab
+                    } label: {
+                        Label(tab.title, systemImage: tab.icon)
+                            .badge(tab == .cart ? store.cartCount : 0)
+                            .foregroundStyle(sidebarTab == tab ? Brand.pink : .primary)
+                            .fontWeight(sidebarTab == tab ? .semibold : .regular)
+                    }
+                    .listRowBackground(
+                        sidebarTab == tab
+                            ? RoundedRectangle(cornerRadius: 8).fill(Brand.pink.opacity(0.18))
+                            : nil
+                    )
                 }
             }
             .navigationTitle("SICK²")
