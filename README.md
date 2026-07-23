@@ -1,64 +1,63 @@
-# 2Sick — украшения и аксессуары
+# 2Sick — Jewelry & Accessories
 
-Мобильное приложение для iPhone и iPad магазина украшений **2Sick**, написанное на SwiftUI.
+iOS/iPadOS app for the **2Sick** jewelry store, built with SwiftUI.
 
-## Возможности
+## Features
 
-- **Каталог** — просмотр коллекций и категорий (серьги, колье, чокеры, кольца, браслеты, анклеты, сумки), поиск и фильтрация
-- **Детали товара** — описание, цена, добавление в корзину
-- **Избранное** — сохранение понравившихся изделий
-- **Корзина** — управление заказом, подсчёт суммы
-- **Кастомный заказ** — форма для создания украшения по индивидуальным параметрам
+- **Catalog** — browse collections and categories (earrings, necklaces, chokers, rings, bracelets, anklets, bags), search and filter
+- **Product detail** — description, price, add to cart
+- **Favorites** — save items you like
+- **Cart** — manage order, calculate total
+- **Custom order** — form to request a piece with individual parameters
 
-## Поддерживаемые платформы
+## Platforms
 
-| Платформа | Минимальная версия |
+| Platform | Minimum version |
 |---|---|
 | iPhone | iOS 17.0+ |
 | iPad | iOS 17.0+ |
 
-На iPad используется `NavigationSplitView` с боковым меню (sidebar), на iPhone — стандартный `TabView`.
+iPad uses `NavigationSplitView` with a sidebar; iPhone uses a standard `TabView`.
 
-## Стек
+## Stack
 
-| Технология | Описание |
+| Technology | Description |
 |---|---|
-| Swift 6 | Строгая конкурентность |
-| SwiftUI | Декларативный UI |
-| `@Observable` | SwiftUI-native state без Combine |
-| `NavigationSplitView` | Адаптивная навигация для iPad |
-| `sensoryFeedback` | Хаптика на iPhone и iPad |
+| Swift 6 | Strict concurrency |
+| SwiftUI | Declarative UI |
+| `@Observable` | SwiftUI-native state, no Combine |
+| `NavigationSplitView` | Adaptive navigation for iPad |
+| `sensoryFeedback` | Haptics on iPhone and iPad |
 
-## Тесты
+## Tests
 
-20 юнит-тестов на Swift Testing (`2SickTests`), покрывающих бизнес-логику:
+20 unit tests using Swift Testing (`2SickTests`), covering business logic:
 
-| Группа | Что проверяется |
+| Group | What is tested |
 |---|---|
-| Каталог | Не пустой, все цены > 0, форматирование ₽ |
-| Корзина — добавление | Счётчик, уникальность позиций, идентичность товара |
-| Корзина — удаление | `remove`, `setQuantity(0)`, отрицательное количество |
-| Корзина — суммы | Итог, `CartItem.total`, пустая сумма = 0 |
-| Избранное | Toggle add/remove, список, независимость от корзины |
+| Catalog | Not empty, all prices > 0, ₽ formatting |
+| Cart — adding | Count, uniqueness, product identity |
+| Cart — removal | `remove`, `setQuantity(0)`, negative quantity |
+| Cart — totals | Total sum, `CartItem.total`, empty cart = 0 |
+| Favorites | Toggle add/remove, list, independence from cart |
 
-Запуск: **⌘U** в Xcode или `xcodebuild test -scheme 2Sick`.
+Run: **⌘U** in Xcode or `xcodebuild test -scheme 2Sick`.
 
-## Структура проекта
+## Project structure
 
 ```
 2Sick/
 ├── 2Sick/
-│   ├── _SickApp.swift         — точка входа (@main)
-│   └── ContentView.swift      — корневой экран (TabView / NavigationSplitView)
+│   ├── _SickApp.swift         — entry point (@main)
+│   └── ContentView.swift      — root screen (TabView / NavigationSplitView)
 ├── 2SickTests/
-│   └── ShopStoreTests.swift   — юнит-тесты (Swift Testing, 20 тестов)
-├── Models.swift               — модели данных (Product, CartItem, Enums)
-├── ShopStore.swift            — хранилище состояния (@Observable)
-├── Theme.swift                — цвета бренда и ProductImageTile
-├── CatalogView.swift          — каталог с адаптивной сеткой
-├── ProductDetailView.swift    — карточка товара (side-by-side на iPad)
-├── FavoritesView.swift        — избранные товары
-├── CartView.swift             — корзина и оформление заказа
-└── CustomOrderView.swift      — форма кастомного заказа
+│   └── ShopStoreTests.swift   — unit tests (Swift Testing, 20 tests)
+├── Models.swift               — data models (Product, CartItem, Enums)
+├── ShopStore.swift            — state store (@Observable)
+├── Theme.swift                — brand colors and ProductImageTile
+├── CatalogView.swift          — catalog with adaptive grid
+├── ProductDetailView.swift    — product card (side-by-side on iPad)
+├── FavoritesView.swift        — favorite items
+├── CartView.swift             — cart and checkout
+└── CustomOrderView.swift      — custom order form
 ```
-
